@@ -7,6 +7,7 @@ import { AuthProvider } from "./context/AuthContext";
 
 // components
 import MarketingPage from "./components/MarketingPage";
+import SignUp from "./components/Signup";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <AuthProvider>
         <Switch>
           <Route exact path="/" component={MarketingPage} />
+          <Route path="/signup" component={SignUp} />
         </Switch>
       </AuthProvider>
     </div>
