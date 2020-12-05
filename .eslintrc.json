@@ -1,20 +1,27 @@
 {
-	"env": {
-		"browser": true,
-		"es2021": true,
-		"jest": true
-	},
-	"extends": ["plugin:react/recommended", "airbnb", "prettier"],
-	"parserOptions": {
-		"ecmaFeatures": {
-			"jsx": true
-		},
-		"ecmaVersion": 12,
-		"sourceType": "module"
-	},
-	"plugins": ["react"],
-	"rules": {
-		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-		"react/prop-types": 0 // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
-	}
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": 0, // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": false,
+        "html": false
+      }
+    ]
+  }
 }
