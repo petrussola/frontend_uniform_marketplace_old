@@ -22,6 +22,8 @@
         "component": false,
         "html": false
       }
-    ]
+    ],
+    "no-debugger": 1,
+    "consistent-return": "off"
   }
 }
