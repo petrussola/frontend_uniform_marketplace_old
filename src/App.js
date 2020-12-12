@@ -7,7 +7,6 @@ import { AuthProvider } from "./context/AuthContext";
 // components
 import MarketingPage from "./components/MarketingPage";
 import SignUp from "./components/Signup";
-import Form from "./components/Form";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <Switch>
           <Route exact path="/" component={MarketingPage} />
           <Route path="/signup" component={SignUp} />
-          <Route path="/test" component={Form} />
         </Switch>
       </AuthProvider>
     </div>
