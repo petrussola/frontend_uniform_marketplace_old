@@ -12,7 +12,7 @@ export default function MarketingPage() {
           <Nav className="ml-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/signup">Sign Up</Nav.Link>
-            <Nav.Link href="/signin">Sign In</Nav.Link>
+            <Nav.Link href="/login">Sign In</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

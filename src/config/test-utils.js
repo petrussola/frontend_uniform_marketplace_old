@@ -1,9 +1,14 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 
 const AllTheProviders = ({ children }) => {
-  return <AuthProvider>{children}</AuthProvider>;
+  return (
+    <Router>
+      <AuthProvider>{children}</AuthProvider>
+    </Router>
+  );
 };
 
 const customRender = (ui, options) => {
