@@ -53,7 +53,7 @@ export default function Login() {
           {errorMessage.type && (
             <Alert variant={errorMessage.type}>{errorMessage.message}</Alert>
           )}
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} data-testid="form">
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -62,6 +62,7 @@ export default function Login() {
                 required
                 value={user.email}
                 onChange={onChangeHandle}
+                data-testid="input-email"
               />
             </Form.Group>
             <Form.Group id="password">
@@ -72,9 +73,15 @@ export default function Login() {
                 required
                 value={user.password}
                 onChange={onChangeHandle}
+                data-testid="input-password"
               />
             </Form.Group>
-            <Button block type="submit" disabled={loading}>
+            <Button
+              block
+              type="submit"
+              disabled={loading}
+              data-testid="submit-button"
+            >
               Log In
             </Button>
           </Form>
