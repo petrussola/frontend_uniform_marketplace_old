@@ -20,16 +20,16 @@ test("Shows typed input", async () => {
 
   const emailInput = screen.getByRole("textbox", { name: /email/i });
   const passwordInput = screen.getByLabelText(/password/i);
-  await user.type(emailInput, fakeEmail);
-  await user.type(passwordInput, fakePassword);
+  user.type(emailInput, fakeEmail);
+  user.type(passwordInput, fakePassword);
 
   expect(emailInput.value).toEqual(fakeEmail);
   expect(passwordInput.value).toEqual(fakePassword);
 });
 
 test("Submits form", async () => {
-  const fakeEmail = "dev@dev.lol";
-  const fakePassword = "1234567";
+  const fakeEmail = process.env.REACT_APP_FAKE_EMAIL_TEST_LOGIN;
+  const fakePassword = process.env.REACT_APP_FAKE_EMAIL_TEST_LOGIN;
 
   const emailInput = screen.getByRole("textbox", { name: /email/i });
   const passwordInput = screen.getByLabelText(/password/i);
