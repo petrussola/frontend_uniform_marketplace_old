@@ -54,9 +54,10 @@ export default function Login() {
             <Alert variant={errorMessage.type}>{errorMessage.message}</Alert>
           )}
           <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
+            <Form.Group>
+              <Form.Label htmlFor="email">Email</Form.Label>
               <Form.Control
+                id="email"
                 type="email"
                 ref={emailRef}
                 required
@@ -64,9 +65,10 @@ export default function Login() {
                 onChange={onChangeHandle}
               />
             </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+            <Form.Group>
+              <Form.Label htmlFor="password">Password</Form.Label>
               <Form.Control
+                id="password"
                 type="password"
                 ref={passwordRef}
                 required
