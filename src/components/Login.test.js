@@ -3,10 +3,23 @@ import user from "@testing-library/user-event";
 import Login from "./Login";
 import { render, screen, act, waitFor } from "../config/test-utils";
 
+const mockHistoryPush = jest.fn();
+
 beforeEach(async () => {
   await act(async () => {
     render(<Login />);
   });
+});
+
+jest.mock("react-router-dom", () => {
+  return {
+    ...jest.requireActual("react-router-dom"),
+    useHistory: () => {
+      return {
+        push: mockHistoryPush,
+      };
+    },
+  };
 });
 
 test("Displays log in form", () => {
@@ -15,8 +28,8 @@ test("Displays log in form", () => {
 });
 
 test("Shows typed input", async () => {
-  const fakeEmail = "dev@dev.lol";
-  const fakePassword = "1234567";
+  const fakeEmail = process.env.REACT_APP_FAKE_EMAIL_TEST_LOGIN;
+  const fakePassword = process.env.REACT_APP_FAKE_PASSWORD_TEST_LOGIN;
 
   const emailInput = screen.getByRole("textbox", { name: /email/i });
   const passwordInput = screen.getByLabelText(/password/i);
@@ -27,7 +40,7 @@ test("Shows typed input", async () => {
   expect(passwordInput.value).toEqual(fakePassword);
 });
 
-test("Submits form", async () => {
+test("Submits form redirectos to /dashboard", async () => {
   const fakeEmail = process.env.REACT_APP_FAKE_EMAIL_TEST_LOGIN;
   const fakePassword = process.env.REACT_APP_FAKE_EMAIL_TEST_LOGIN;
 
@@ -38,6 +51,6 @@ test("Submits form", async () => {
   user.type(passwordInput, fakePassword);
   user.click(button);
   await waitFor(() => {
-    expect(screen.getByText(/There is no user record/i)).toBeInTheDocument();
+    expect(mockHistoryPush).toHaveBeenCalledWith("/dashboard");
   });
 });

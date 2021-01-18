@@ -1,12 +1,22 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { AuthProvider } from "../context/AuthContext";
+import { BrowserRouter as Router, MemoryRouter } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
+
+const currentUser = {
+  email: process.env.REACT_APP_FAKE_EMAIL_TEST_LOGIN,
+};
+
+const logout = jest.fn();
+const signup = jest.fn();
+const login = jest.fn();
 
 const AllTheProviders = ({ children }) => {
   return (
     <Router>
-      <AuthProvider>{children}</AuthProvider>
+      <AuthContext.Provider value={{ currentUser, logout, signup, login }}>
+        <MemoryRouter>{children}</MemoryRouter>
+      </AuthContext.Provider>
     </Router>
   );
 };

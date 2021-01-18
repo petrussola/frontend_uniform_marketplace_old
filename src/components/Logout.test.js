@@ -1,8 +1,7 @@
 import React from "react";
 import user from "@testing-library/user-event";
 import Logout from "./Logout";
-
-import { act, screen, render, waitFor } from "../config/test-utils-dva";
+import { act, screen, render, waitFor } from "../config/test-utils";
 
 const handleLogout = jest.fn();
 

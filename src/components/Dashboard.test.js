@@ -1,9 +1,7 @@
 import React from "react";
 import user from "@testing-library/user-event";
 import Dashboard from "./Dashboard";
-import { act, screen, render, waitFor } from "../config/test-utils-dva";
-
-// const handleLogout = jest.fn();
+import { act, screen, render, waitFor } from "../config/test-utils";
 
 const mockHistoryPush = jest.fn();
 
@@ -36,8 +34,6 @@ test("clicking logout redirects to login", async () => {
   const button = screen.getByRole("button", { name: /logout/i });
   user.click(button);
   await waitFor(() => {
-    screen.debug();
-    // expect(handleLogout).toHaveBeenCalled();
     expect(mockHistoryPush).toHaveBeenCalledWith("/login");
   });
 });
