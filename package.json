@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cy:run": "cypress run --spec \"cypress/integration/app/**/*\""
   },
   "eslintConfig": {
     "extends": [
@@ -63,7 +64,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm test"
+      "pre-push": "npm run cy:run"
     }
   },
   "lint-staged": {
