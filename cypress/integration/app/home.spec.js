@@ -1,13 +1,33 @@
+beforeEach(() => {
+  cy.visit("/");
+});
+
 describe("Load Home Page", () => {
-  it("succesfully loads", () => {
-    cy.visit("/");
-  });
+  it("succesfully loads", () => {});
   it("Contains expected nav bar", () => {
+    // cy.visit("/");
     cy.contains("Uniforms");
     cy.contains("Very fast.");
     // cy.contains("Home");
     // cy.contains("Sign In");
     // cy.contains("Sign Up");
+  });
+  it("Contains footer", () => {
+    cy.contains("Made with");
+  });
+  it("Contains jumbotron", () => {
+    cy.contains("School uniforms are expensive, and kids outgrow them.");
+    cy.contains(
+      "Marketplace for communities of parents to donate or sell school uniforms so others can reuse them."
+    );
+  });
+  it("Loads image", () => {
+    cy.get('[alt="school uniform"]')
+      .should("be.visible")
+      .and(($img) => {
+        // "naturalWidth" and "naturalHeight" are set when the image loads
+        expect($img[0].naturalWidth).to.be.greaterThan(0);
+      });
   });
   // it("Loads Log In page upon clicking on Log In button", () => {
   //   cy.contains("Sign In")
