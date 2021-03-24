@@ -24,3 +24,7 @@ yarn-error.log*
 
 .eslintcache
 /.netlify
+
+cypress.json
+cypress.env.json
+cypress/

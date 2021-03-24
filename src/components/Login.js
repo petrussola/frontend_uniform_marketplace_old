@@ -63,6 +63,7 @@ export default function Login() {
                 required
                 value={user.email}
                 onChange={onChangeHandle}
+                data-cy="email-field"
               />
             </Form.Group>
             <Form.Group>
@@ -74,16 +75,25 @@ export default function Login() {
                 required
                 value={user.password}
                 onChange={onChangeHandle}
+                data-cy="password-field"
               />
             </Form.Group>
-            <Button block type="submit" disabled={loading}>
+            <Button
+              block
+              type="submit"
+              disabled={loading}
+              data-cy="login-button"
+            >
               Log In
             </Button>
           </Form>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+      <div className="w-100 text-center mt-2" data-cy="signup-link">
+        Need an account?{" "}
+        <Link to="/signup" id="signup-link">
+          Sign Up
+        </Link>
       </div>
     </>
   );

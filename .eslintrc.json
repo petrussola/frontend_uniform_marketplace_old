@@ -4,7 +4,13 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:cypress/recommended",
+    "plugin:chai-friendly/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -26,6 +32,7 @@
     "no-debugger": 1,
     "consistent-return": "off",
     "react/jsx-one-expression-per-line": 0,
-    "no-unused-vars": "warn" // https://eslint.org/docs/rules/no-unused-vars
+    "no-unused-vars": "warn", // https://eslint.org/docs/rules/no-unused-vars
+    "no-console": "off"
   }
 }
