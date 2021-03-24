@@ -4,9 +4,10 @@ describe("Load Home Page", () => {
   });
   it("Contains expected nav bar", () => {
     cy.contains("Uniforms");
-    cy.contains("Home");
-    cy.contains("Sign In");
-    cy.contains("Sign Up");
+    cy.contains("Very fast.");
+    // cy.contains("Home");
+    // cy.contains("Sign In");
+    // cy.contains("Sign Up");
   });
   it("Loads Log In page upon clicking on Log In button", () => {
     cy.contains("Sign In")
