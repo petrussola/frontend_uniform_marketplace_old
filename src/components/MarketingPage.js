@@ -9,12 +9,12 @@ import styled from "styled-components";
 import uniformOne from "../media/uniform_1.jpg";
 
 const StyledDiv = styled.div`
-  padding: 0 1em;
+  /* padding: 0 1em; */
   background-color: #fcfcfc;
   height: 100vh;
   position: relative;
   box-sizing: border-box;
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     height: auto;
   }
 `;
@@ -25,44 +25,49 @@ const StyledJumbotron = styled(Jumbotron)`
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-evenly;
-  height: auto;
-  @media (max-width: 800px) {
-    margin-bottom: 1rem;
+  height: 60vh;
+  @media (max-width: 1000px) {
+    height: auto;
   }
   span {
     color: #15a545;
   }
   .parts-jumbotron {
     width: 50%;
-    @media (max-width: 800px) {
+    height: 100%;
+    padding: 0;
+    @media (max-width: 1000px) {
       width: 100%;
+      height: auto;
+      padding: 0.5rem 0;
     }
   }
   .right-jumbotron {
-    height: 300px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     img {
-      height: 100%;
+      height: 120%;
       border-radius: 0.3rem;
-      @media (max-width: 800px) {
-        height: 75%;
+      box-shadow: 0.5rem 0.5rem 20px gray;
+      @media (max-width: 1000px) {
+        width: 100%;
+        height: auto;
       }
     }
   }
   h1 {
     font-size: 2.5rem;
     padding: 0.2rem 0;
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       font-size: 2rem;
     }
   }
   p {
     padding: 0.2rem 0;
     font-size: 1.5rem;
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       font-size: 1.25rem;
     }
   }
@@ -84,12 +89,16 @@ const StyledFooter = styled.footer`
   position: absolute;
   width: 100%;
   padding-top: 1rem;
-  margin: 0 auto;
+  margin-bottom: 0;
   text-align: center;
-  background-color: #e7e7e7;
+  background-color: #f3f3f3;
   color: #959595;
   @media (max-width: 600px) {
-    margin-top: 1rem;
+    position: static;
+    padding: 0.5rem 0;
+    p {
+      margin: 0;
+    }
   }
 `;
 
@@ -132,7 +141,7 @@ export default function MarketingPage() {
       </StyledJumbotron>
       <StyledFooter>
         <p>
-          © 2021 ShareUniforms.com. All rights reserved. Made with 💙 by{" "}
+          © 2021 ShareUniforms.com. All rights reserved. Made with 💚 by{" "}
           <a href="https://www.peresola.com">peresola.com</a>
         </p>
       </StyledFooter>
